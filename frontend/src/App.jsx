@@ -5,8 +5,8 @@ import { formatDistanceToNow } from 'date-fns';
 import { Search, MapPin, Briefcase, RefreshCw, ExternalLink, DollarSign, Building, Building2 } from 'lucide-react';
 import './index.css';
 
-const API_URL = 'http://localhost:5000/api/jobs';
-const SOCKET_URL = 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/jobs';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
 
 function App() {
   const [jobs, setJobs] = useState([]);
